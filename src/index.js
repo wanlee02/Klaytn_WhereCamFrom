@@ -872,7 +872,12 @@ const App = {
         this.Analysis(buffer).then(function (e) {
           if (e[0] == 'error') {
             analSpin.stop();
-            alert("error : video's header content length is too large.");
+            $('#print').empty();
+            $('#transaction').empty();
+            $('#print').append("<p style='color:blue; font-weight:bold; font-size:17px;'>Unknown!</p><br>");
+            $('#print').append("KLAY is not paid. <br>")
+            $('#print').append("<br>Signature of this video is not registered yet.<br>Please see 'Detectable recording device' and 'Detectable editing tool' in Home.");
+            $('#print').show();
 
             return;
           }
@@ -1010,8 +1015,12 @@ const App = {
           console.log('Analysis')
           if (e[0] == 'error') {
             analSpin.stop();
-            alert("error : video's header content length is too large.");
-
+            $('#print').empty();
+            $('#transaction').empty();
+            $('#print').append("<p style='color:blue; font-weight:bold; font-size:17px;'>Unknown!</p><br>");
+            $('#print').append("KLAY is not paid. <br>")
+            $('#print').append("<br>Signature of this video is not registered yet.<br>Please see 'Detectable recording device' and 'Detectable editing tool' in Home.");
+            $('#print').show();
             return;
           }
           var tim = new Date();
